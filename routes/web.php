@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*Route:get('/cache', function() {
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('cache:clear');
+    return "Caché limpio";
+})->name('cache');*/
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('users', 'UserController');
+
