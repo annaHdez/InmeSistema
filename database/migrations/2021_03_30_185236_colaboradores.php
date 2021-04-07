@@ -8,27 +8,29 @@ class Colaboradores extends Migration
 {
         public function up()
     {
-        /*Schema::create('colaboradores', function (Blueprint $table){
+        Schema::create('colaboradores', function (Blueprint $table){
             $table->id();
-            $table->string('nombre', 100);
-            $table->string('apellido_paterno', 100);
-            $table->string('apellido_materno', 100);
-            $table->char('sexo'); //Masculino, Femenino
-            fecha nacimiento
-            educación
-            fecha admisión
-            área
-            posición
-            sueldo
-            SD IMSS
-            SDI
-            fecha baja
-            antiguedad
-        });*/
+            $table->string('nombre', 50);
+            $table->string('apellido_paterno', 50);
+            $table->string('apellido_materno', 50);
+            $table->string('sexo', 10);
+            $table->date('fecha_nacimiento');
+            $table->string('educación');
+            $table->date('fecha_admisión');
+            $table->string('posicion');
+            $table->foreign('posicion')->references('posicion')->on('areas');
+            $table->string('puesto');
+            $table->float('sueldo');
+            $table->float('SD_IMSS');
+            $table->float('SDI');
+            $table->date('fecha_baja');
+            $table->date_diff($fecha_baja() - $fecha_admision()): 'antiguedad';
+            date_diff(DateTimeInterface $f [, bool $absolute , DateTimeInterface $datetime1 ]): DateInterval
+        });
     }
 
         public function down()
     {
-        //
+
     }
 }

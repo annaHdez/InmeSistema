@@ -6,24 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAreasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('departamento', 50);
+            $table->string('posicion', 50);
+            $table->string('puesto', 50);
+            $table->float('sueldo');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('areas');
