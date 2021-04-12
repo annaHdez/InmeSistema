@@ -19,11 +19,11 @@ class Colaboradores extends Migration
             $table->string('educación');
             $table->dateTime('fecha_admisión');
             $table->string('posicionColab',50);
-                $table->foreign('posicionColab')->cascadeOnDelete()->references('posicion')->on('areas');
+                $table->foreign('posicionColab')->references('posicion')->on('areas');
             $table->string('puestoColab',50);
-                $table->foreign('puestoColab')->cascadeOnDelete()->references('puesto')->on('areas');
+                $table->foreign('puestoColab')->references('puesto')->on('areas');
             $table->float('sueldoColab');
-                $table->foreign('sueldoColab')->cascadeOnDelete()->references('sueldo')->on('areas');
+                $table->foreign('sueldoColab')->references('sueldo')->on('areas');
             $table->float('SD_IMSS');
             $table->float('SDI');
             $table->boolean('estatus');
