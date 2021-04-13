@@ -42,35 +42,38 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
                             @if(\Auth::user()->name)
                                 <ul class= "navbar-nav ml-auto d-inline-flex margin: 40px">
-                                    <li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('areas.index') }}">Áreas</a>
                                     </li>
-                                    <li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('colaboradores.index') }}">Colaboradores</a>
                                     </li>
-                                    <li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('proyecto.index') }}">Proyectos</a>
                                     </li>
-                                    <li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('nomina.index') }}">Nómina</a>
                                     </li>
-                                    <li class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <li>
+
+                                    </li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Salir') }}
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -78,7 +81,7 @@
                                         </form>
                                     </li>
                                 <ul>
-                            @endif()
+                            @endif
                         @endguest
                     </ul>
                 </div>

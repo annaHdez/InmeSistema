@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>InMekha</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                color: white;
             }
         </style>
     </head>
@@ -30,11 +31,11 @@
                         <a href="{{ route('login') }}" class="text-sm text-gray-100 underline">Iniciar sesión</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-100 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-100 underline">Registrarse</a>
                         @endif
                     @endauth
                 </div>
-                    <img class="d-block w-auto" src="{{url('../imagenes/IM.jpg')}}" style="height: 145vh"/>
+                    <img class="d-block w-auto" src="{{url('../imagenes/Inme.jpg')}}" style="height: 110vh"/>
                 <div>
             @endif
         </div>
