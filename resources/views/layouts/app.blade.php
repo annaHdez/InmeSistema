@@ -66,11 +66,13 @@
                                     <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('nomina.index') }}">Nómina</a>
                                     </li>
-                                    <li>
-
+                                    <li class="nav-item d-inline" style="margin-right: 2rem;">
+                                        <a class="nav-link margin: 40px">
+                                                {{ Auth::user()->name }}
+                                        </a>
                                     </li>
                                     <li class = "nav-item d-line" style = "margin-right: 2rem" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="nav-link margin: 40px" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Salir') }}
