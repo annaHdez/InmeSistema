@@ -18,11 +18,11 @@ class Colaboradores extends Migration
             $table->date('fecha_nacimiento');
             $table->string('educación');
             $table->dateTime('fecha_admisión');
-            $table->unsignedString('posicionColab',50);
+            $table->unsigned('posicionColab');
                 $table->foreign('posicionColab')->references('posicion')->on('areas');
-            $table->unsignedString('puestoColab',50);
+            $table->string('puestoColab',50);
                 $table->foreign('puestoColab')->references('puesto')->on('areas');
-            $table->unsignedFloat('sueldoColab');
+            $table->float('sueldoColab');
                 $table->foreign('sueldoColab')->references('sueldo')->on('areas');
             $table->float('SD_IMSS');
             $table->float('SDI');

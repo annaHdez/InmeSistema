@@ -14,7 +14,8 @@ class AreasController extends Controller
     }
 
     public function create(){
-
+        $areas_table = AreasModel::orderBy('departamento');
+        return view('areas.index#Crear_area', ['areas_table'=>$areas_table]);
     }
 
     public function store(){

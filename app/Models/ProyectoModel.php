@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ProyectoModel extends Model
 {
     use HasFactory;
+
+    protected $table = 'proyecto';
+
+    protected $fillable = ['departamento', 'posicion', 'puesto', 'sueldo'];
+
 }
