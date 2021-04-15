@@ -8,11 +8,11 @@ class CreateAreasTable extends Migration
     public function up()
     {
         Schema::create('areas', function (Blueprint $table) {
-            $table->id('id_posicion');
-            $table->string('posicion', 20);
-            $table->string('departamento', 50);
-            $table->string('puesto', 50);
-            $table->float('sueldo');
+            $table->integer('id_posicion')->primary();
+            $table->string('posicion',20);
+            $table->string('departamento',50);
+            $table->string('puesto',50);
+            $table->double('sueldo',8,2);
         });
     }
 

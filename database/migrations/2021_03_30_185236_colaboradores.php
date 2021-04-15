@@ -3,32 +3,31 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use SebastianBergmann\Type\NullType;
 
 class Colaboradores extends Migration
 {
         public function up()
     {
         Schema::create('colaboradores', function (Blueprint $table){
-            $table->integerIncrements('idColab');
-            $table->string('nombre', 50);
-            $table->string('apellido_paterno', 50);
-            $table->string('apellido_materno', 50);
-            $table->string('sexo', 10);
+            $table->id('id_colab')->primary();
+            $table->string('nombre',50);
+            $table->string('apellido_paterno',50);
+            $table->string('apellido_materno',50);
+            $table->string('sexo',10);
             $table->date('fecha_nacimiento');
-            $table->string('educación');
-            $table->dateTime('fecha_admisión');
-            $table->unsigned('posicionColab');
-                $table->foreign('posicionColab')->references('posicion')->on('areas');
-            $table->string('puestoColab',50);
-                $table->foreign('puestoColab')->references('puesto')->on('areas');
-            $table->float('sueldoColab');
-                $table->foreign('sueldoColab')->references('sueldo')->on('areas');
-            $table->float('SD_IMSS');
-            $table->float('SDI');
+            $table->string('educación',30);
+            $table->date('fecha_admisión');
+            $table->string('posicion_colab',20);
+                $table->foreign('posicion_colab')->references('posicion')->on('areas');
+            $table->string('puesto_colab',50);
+                $table->foreign('puesto_colab')->references('puesto')->on('areas');
+            $table->double('sueldo_colab',8,2);
+                $table->foreign('sueldo_colab')->references('sueldo')->on('areas');
+            $table->double('SD_IMSS',8,2);
+            $table->double('SDI',8,2);
             $table->boolean('estatus');
-            $table->dateTime('fecha_baja', Null);
-            $table->string('antiguedad', 30);
+            $table->date('fecha_baja')->nullable();
+            $table->string('antiguedad',30);
         });
     }
 

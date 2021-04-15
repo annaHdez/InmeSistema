@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\DB;
 class AreasController extends Controller
 {
     public function index(Request $request){
-        $areas_table = AreasModel::all();
-        return view('areas.index', ['areas_table'=>$areas_table]);
+        $areas = AreasModel::all();
+        return view('areas.index', ['areas'=>$areas]);
     }
 
     public function create(){
-        $areas_table = AreasModel::orderBy('departamento');
-        return view('areas.index#Crear_area', ['areas_table'=>$areas_table]);
+        $areas = AreasModel::orderBy('departamento');
+        return view('areas.index#Crear_area', ['areas'=>$areas]);
     }
 
     public function store(){
