@@ -61,7 +61,10 @@
                                         <a class="nav-link margin: 40px" href="{{route('colaboradores.index') }}">Colaboradores</a>
                                     </li>
                                     <li class = "nav-item d-line" style = "margin-right: 2rem">
-                                        <a class="nav-link margin: 40px" href="{{route('proyecto.index') }}">Proyectos</a>
+                                        <a class="nav-link margin: 40px" href="{{route('empresas.index') }}">Empresas</a>
+                                    </li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
+                                        <a class="nav-link margin: 40px" href="{{route('proyectos.index') }}">Proyectos</a>
                                     </li>
                                     <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('nomina.index') }}">Nómina</a>

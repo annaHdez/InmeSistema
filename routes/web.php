@@ -28,9 +28,11 @@ Route::get('/cache', function() {
     return "Caché limpio";
 })->name('cache');
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('users', 'UserController');
 Route::resource('areas', 'AreasController');
+Route::resource('empresas', 'EmpresasController');
 Route::resource('colaboradores', 'ColaboradoresController');
 Route::resource('nomina', 'NominaController');
-Route::resource('proyecto', 'ProyectoController');
+Route::resource('proyectos', 'ProyectoController');
