@@ -11,5 +11,5 @@ class AreasModel extends Model
 
     protected $table = 'areas';
 
-    protected $fillable = ['departamento', 'posicion', 'puesto', 'sueldo'];
+    protected $fillable = ['id_posicion','posicion','departamento','puesto','sueldo'];
 }

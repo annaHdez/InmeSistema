@@ -9,10 +9,10 @@ class CreateAreasTable extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->integer('id_posicion')->primary();
-            $table->string('posicion',20);
+            $table->string('posicion',20)->index();
             $table->string('departamento',50);
-            $table->string('puesto',50);
-            $table->double('sueldo',8,2);
+            $table->string('puesto',50)->index();
+            $table->double('sueldo',8,2)->index();
         });
     }
 

@@ -29,10 +29,6 @@
                         <a href="{{ url('/home') }}" class="text-sm text-gray-100 underline">Inicio</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-100 underline">Iniciar sesión</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-100 underline">Registrarse</a>
-                        @endif
                     @endauth
                 </div>
                     <img class="d-block w-auto" src="{{url('../imagenes/Inme.jpg')}}" style="height: 110vh"/>

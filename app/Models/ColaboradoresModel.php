@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class ColaboradoresModel extends Model
 {
     use HasFactory;
+
+    protected $table = ['colaboradores'];
+
+    protected $fillable = ['nombre','ape_pat','ape_mat','sexo','fechaNac',
+    'educacion','fecha_admision','posicionC','puestoC','sueldoC',
+    'SD_IMSS','SDI','estatus','fecha_baja','antiguedad'];
+
+    public function getArea(){
+            return $this->belongsTo('App\Models\AreasModel', 'posicionC','puestoC','sueldoC');
+    }
 }
