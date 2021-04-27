@@ -9,11 +9,15 @@ class RegistrarProyecto extends Migration
     public function up()
     {
         Schema::create('registrar_proyecto', function (Blueprint $table) {
-            $table->id('id_proyecto');
-            $table->string('posicion', 20);
-            $table->string('departamento', 50);
-            $table->string('puesto', 50);
-            $table->float('sueldo');
+            $table->string('id_proyecto',20)->primary();
+            $table->string('idEmpresa',30);
+                $table->foreign('idEmpresa')->cascadeOnDelete()->references('id_empresa')->on('empresas');
+            $table->string('nombre_Empresa',100);
+                $table->foreign('nombre_Empresa')->cascadeOnDelete()->references('nombre_empresa')->on('empresas');
+            $table->string('descripcion',255);
+            $table->integer('cantidad');
+            $table->double('costo_totalProyecto',8,2);
+            $table->date('fecha_entrega');
         });
     }
 
