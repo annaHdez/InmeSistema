@@ -11,11 +11,11 @@ class ColaboradoresModel extends Model
 
     protected $table = ['colaboradores'];
 
-    protected $fillable = ['nombre','ape_pat','ape_mat','sexo','fechaNac',
+    protected $fillable = ['id_colab','nombre','ape_pat','ape_mat','sexo','fechaNac',
     'educacion','fecha_admision','posicionC','puestoC','sueldoC',
     'SD_IMSS','SDI','estatus','fecha_baja','antiguedad'];
 
-    public function getArea(){
+    /*public function Area(){
             return $this->belongsTo('App\Models\AreasModel', 'posicionC','puestoC','sueldoC');
-    }
+    }*/
 }
