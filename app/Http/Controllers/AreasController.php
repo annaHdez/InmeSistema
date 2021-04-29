@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Redirect;
 class AreasController extends Controller
 {
     public function index(Request $request){
-        $areas = AreasModel::all();
-        return view('areas.index', ['areas'=>$areas]);
+        $areas_table = AreasModel::all();
+        return view('areas.index', ['areas_table'=>$areas_table]);
     }
 
     public function create(){
-        $areas = AreasModel::orderBy('departamento');
-        return view('areas.index#Crear_area', ['areas'=>$areas]);
+        return view('areas.create');
     }
 
     public function store(Request $request){
@@ -29,11 +28,11 @@ class AreasController extends Controller
 
         $modelo = new AreasModel($request->all());
             $modelo -> save();
-            return Redirect::to('Areas');
+            return Redirect::to('Areas_table');
     }
 
     public function show(){
-        $areas = AreasModel::find('');
+        $areas_table = AreasModel::find('');
     }
 
     public function edit(Request $request){

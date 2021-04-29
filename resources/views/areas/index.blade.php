@@ -12,22 +12,25 @@
             <div class = "col-md-16">
                 <div class = "card">
                     <div class = "card-header"> Departamentos
-                        <button href = "" class = "btn btn-success btn-sm">Agregar departamento</button>
+                        <a href = "{{route('areas.create')}}" class = "btn btn-success btn-sm">Agregar departamento</a>
                     </div>
                     <div class = "card-body">
                         <table class="table table-hover table-bordered table-sm table-condensed">
                             <thead>
-                                <th>Número</th>
+                                <th>No.</th>
                                 <th>Nombre del departamento</th>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        1.
-                                    </td>
-                                    <td>
-                                    </td>
-                                </tr>
+                                @foreach($areas_table as $rowAreas)
+                                    <tr>
+                                        <td>
+                                            1.
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -39,7 +42,7 @@
             <div class = "col-md-16">
                 <div class = "card">
                     <div class = "card-header"> Posiciones
-                        <button href = "" class = "btn btn-success btn-sm">Agregar posición</button>
+                        <a href = "{{route('areas.create')}}" class = "btn btn-success btn-sm">Agregar posición</a>
                     </div>
                     <div class = "card-body">
                         <table class="table table-hover table-bordered table-sm table-condensed">
@@ -49,12 +52,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        1.
-                                    </td>
-                                    <td>
-
-                                    </td>
+                                    <td>{{$rowAreas->num}}</td>
+                                    <td>{{$rowAreas->departamento}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -67,7 +66,7 @@
             <div class = "col-md-16">
                 <div class = "card">
                     <div class = "card-header"> Puestos de trabajo
-                        <button href = "" class = "btn btn-success btn-sm">Agregar puesto</button>
+                        <a href = "{{route('areas.create')}}" class = "btn btn-success btn-sm">Agregar puesto</a>
                     </div>
                     <div class = "card-body">
                         <table class="table table-hover table-bordered table-sm table-condensed">
