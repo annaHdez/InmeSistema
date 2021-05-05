@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
-use App\Models\ColaboradoresModel;
+use App\Models\PosicionesModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
-class ColaboradoresController extends Controller
+class PosicionesController extends Controller
 {
     public function index(Request $request){
-        $colab_table = ColaboradoresModel::all();
-        return view('colab.index', ['colab_table'=>$colab_table]);
+        $posiciones_table = PosicionesModel::all();
+        return view('posiciones.index', ['posiciones_table'=>$posiciones_table]);
     }
 
     public function create(){

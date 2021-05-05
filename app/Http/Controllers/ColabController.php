@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\ColaboradoresModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
-class ColaboradoresController extends Controller
+class ColabController extends Controller
 {
     public function index(Request $request){
         $colab_table = ColaboradoresModel::all();

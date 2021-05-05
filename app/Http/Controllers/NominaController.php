@@ -12,7 +12,7 @@ class NominaController extends Controller
     }
 
     public function create(){
-
+        
     }
 
     public function store(){

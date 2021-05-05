@@ -17,20 +17,20 @@ class Colaboradores extends Migration
             $table->date('fechaNac');
             $table->string('educacion',30);
             $table->date('fecha_admision');
-            $table->string('posicionC',20);
-                $table->foreign('posicionC')->cascadeOnDelete()->references('posicion')->on('areas');
-            $table->string('puestoC',50);
-                $table->foreign('puestoC')->cascadeOnDelete()->references('puesto')->on('areas');
-            $table->double('sueldoC',8,2)->index();
-                $table->foreign('sueldoC')->cascadeOnDelete()->references('sueldo')->on('areas');
+            $table->string('posicion_colab',20);
+                $table->foreign('posicion_colab')->cascadeOnDelete()->references('posicion')->on('posiciones');
+            $table->string('puesto_colab',50);
+                $table->foreign('puesto_colab')->cascadeOnDelete()->references('puesto')->on('puestos');
+            $table->double('sueldo_colab',8,2);
+                $table->foreign('sueldo_colab')->cascadeOnDelete()->references('sueldo')->on('puestos');
             $table->double('SD_IMSS',8,2)->index();
             $table->double('SDI',8,2)->index();
             $table->boolean('estatus')->index();
             $table->date('fecha_baja')->nullable();
             $table->string('antiguedad',30);
+            $table->double('costoHrsExtra',8,2)->index();
         });
     }
-
         public function down()
     {
             Schema::dropIfExists('colaboradores');

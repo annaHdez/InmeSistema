@@ -11,6 +11,10 @@ class RegistrarProyModel extends Model
 
     protected $table = 'registrar_proyecto';
 
-    protected $fillable = ['departamento', 'posicion', 'puesto', 'sueldo'];
+    protected $fillable = ['id_proyecto','idEmpresa','nombre_Empresa','descripcion',
+    'cantidad','costo_venta','fecha_entrega'];
 
+    public function getEmpresa(){
+        return $this->belongsTo('App\Models\EmpresasModel', 'id_empresa','nombre_empresa');
+    }
 }

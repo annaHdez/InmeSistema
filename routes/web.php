@@ -30,9 +30,11 @@ Route::get('/cache', function() {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('users', 'UserController');
-Route::resource('areas', 'AreasController');
+Route::resource('deptos', 'DeptosController');
+Route::resource('posiciones', 'PosicionesController');
+Route::resource('puestos', 'PuestosController');
+Route::resource('colab', 'ColabController');
 Route::resource('empresas', 'EmpresasController');
-Route::resource('colaboradores', 'ColaboradoresController');
-Route::resource('nomina', 'NominaController');
 Route::resource('proyectos', 'ProyectoController');
+Route::resource('nomina', 'NominaController');
+Route::resource('users', 'UserController');

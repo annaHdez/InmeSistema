@@ -16,7 +16,7 @@ class RegistrarProyecto extends Migration
                 $table->foreign('nombre_Empresa')->cascadeOnDelete()->references('nombre_empresa')->on('empresas');
             $table->string('descripcion',255);
             $table->integer('cantidad');
-            $table->double('costo_totalProyecto',8,2);
+            $table->double('costo_venta',8,2);
             $table->date('fecha_entrega');
         });
     }

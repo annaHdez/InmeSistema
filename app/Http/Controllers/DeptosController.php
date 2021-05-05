@@ -1,16 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use Symfony\Component\HttpFoundation\Session\Session;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ColaboradoresModel;
 use Illuminate\Support\Facades\DB;
+use App\Models\DeptosModel;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redis;
 
-class ColaboradoresController extends Controller
+class DeptosController extends Controller
 {
     public function index(Request $request){
-        $colab_table = ColaboradoresModel::all();
-        return view('colab.index', ['colab_table'=>$colab_table]);
+        $deptos_table = DeptosModel::all();
+        return view('deptos.index', ['deptos_table'=>$deptos_table]);
     }
 
     public function create(){

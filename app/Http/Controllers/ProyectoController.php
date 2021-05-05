@@ -7,8 +7,8 @@ use App\Models\ProyectoModel;
 class ProyectoController extends Controller
 {
     public function index(Request $request){
-        $proyecto_table = ProyectoModel::all();
-        return view('proyecto.index', ['proyecto_table'=>$proyecto_table]);
+        $proyectos_table = ProyectoModel::all();
+        return view('proyectos.index', ['proyectos_table'=>$proyectos_table]);
     }
 
     public function create(){

@@ -9,7 +9,7 @@ class ProyectoModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'proyecto';
+    protected $table = 'proyectos';
 
     protected $fillable = ['departamento', 'posicion', 'puesto', 'sueldo'];
 

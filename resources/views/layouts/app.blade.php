@@ -55,10 +55,16 @@
                             @if(\Auth::user()->name)
                                 <ul class= "navbar-nav ml-auto d-inline-flex margin: 40px">
                                     <li class = "nav-item d-line" style = "margin-right: 2rem">
-                                        <a class="nav-link margin: 40px" href="{{route('areas.index') }}">Áreas</a>
+                                        <a class="nav-link margin: 40px" href="{{route('deptos.index') }}">Departamentos</a>
                                     </li>
                                     <li class = "nav-item d-line" style = "margin-right: 2rem">
-                                        <a class="nav-link margin: 40px" href="{{route('colaboradores.index') }}">Colaboradores</a>
+                                        <a class="nav-link margin: 40px" href="{{route('posiciones.index') }}">Posiciones</a>
+                                    </li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
+                                        <a class="nav-link margin: 40px" href="{{route('puestos.index') }}">Puestos</a>
+                                    </li>
+                                    <li class = "nav-item d-line" style = "margin-right: 2rem">
+                                        <a class="nav-link margin: 40px" href="{{route('colab.index') }}">Colaboradores</a>
                                     </li>
                                     <li class = "nav-item d-line" style = "margin-right: 2rem">
                                         <a class="nav-link margin: 40px" href="{{route('empresas.index') }}">Empresas</a>
@@ -71,7 +77,7 @@
                                     </li>
                                     <li class="nav-item d-inline" style="margin-right: 2rem;">
                                         <a class="nav-link margin: 40px">
-                                                {{ Auth::user()->name }}
+                                                {{ Auth::user()->name}}
                                         </a>
                                     </li>
                                     <li class = "nav-item d-line" style = "margin-right: 2rem" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
