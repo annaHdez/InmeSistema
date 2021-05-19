@@ -1,22 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Session;
+use Redirect;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\DeptosModel;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Redis;
 
 class DeptosController extends Controller
 {
     public function index(Request $request){
-        $deptos_table = DeptosModel::all();
-        return view('deptos.index', ['deptos_table'=>$deptos_table]);
+        $tableDeptos = DeptosModel::all();
+        return view('deptos.index', ['tableDeptos'=>$tableDeptos]);
     }
 
     public function create(){
+        return view('deptos.create');
     }
 
     public function store(){

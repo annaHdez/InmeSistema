@@ -7,7 +7,7 @@
 <br><br>
 
 <body class="text-center">
-    <a href = "{{route('deptos.create')}}" class = "btn btn-success btn-sm">Agregar departamento</a>
+    <a href = "{{route('deptos.create')}}" class = "btn btn-primary btn-sm">Agregar departamento</a>
     
     <div class = "container" style= "display:inline-flex">
         <div style = "margin:50px">
@@ -21,13 +21,13 @@
                                 <th>Nombre del departamento</th>
                             </thead>
                             <tbody>
-                                @foreach($deptos_table as $rowDepto)
+                                @foreach($tableDeptos as $rowDepto)
                                     <tr>
                                         <td>
-                                            1.
+                                            {{$rowDepto->id_depto}}
                                         </td>
                                         <td>
-
+                                            {{$rowDepto->nombre_depto}}
                                         </td>
                                     </tr>
                                 @endforeach
