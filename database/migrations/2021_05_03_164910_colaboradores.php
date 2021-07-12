@@ -9,26 +9,29 @@ class Colaboradores extends Migration
     public function up()
     {
         Schema::create('colaboradores', function (Blueprint $table){
-            $table->id('id_colab')->autoIncrement();
-            $table->string('nombre',50)->index();
-            $table->string('ape_pat',50)->index();
-            $table->string('ape_mat',50)->index();
+            $table->string('id',10)->primary();
             $table->string('sexo',10);
             $table->date('fechaNac');
-            $table->string('educacion',30);
+            $table->string('nombre',50);
+            $table->string('ape_paterno',50);
+            $table->string('ape_materno',50);
+            $table->string('correo',50)->nullable();
+            $table->string('grado_estudios',30);
             $table->date('fecha_admision');
-            $table->string('posicion_colab',20);
-                $table->foreign('posicion_colab')->cascadeOnDelete()->references('posicion')->on('posiciones');
-            $table->string('puesto_colab',50);
-                $table->foreign('puesto_colab')->cascadeOnDelete()->references('puesto')->on('puestos');
-            $table->double('sueldo_colab',8,2);
-                $table->foreign('sueldo_colab')->cascadeOnDelete()->references('sueldo')->on('puestos');
-            $table->double('SD_IMSS',8,2)->index();
-            $table->double('SDI',8,2)->index();
+            $table->unsignedBigInteger('id_posicion');
+                $table->foreign('id_posicion')->references('id')->on('posiciones');
+            $table->string('puesto',50);
+                $table->foreign('puesto')->references('puesto_trabajo')->on('puestos');
+            $table->decimal('sueldo_base',13,2);
+                $table->foreign('sueldo_base')->references('sueldo')->on('puestos');
+            $table->decimal('SD_IMSS',13,2)->index();
+            $table->decimal('SDI',13,2)->index();
+            $table->string('turno',10);
             $table->boolean('estatus')->index();
             $table->date('fecha_baja')->nullable();
             $table->string('antiguedad',30);
-            $table->double('costoHrsExtra',8,2)->index();
+            $table->double('costoHrsExtra',8,2)->index()->nullable();
+            $table->timestamps();
         });
     }
         public function down()

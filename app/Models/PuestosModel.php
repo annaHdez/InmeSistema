@@ -11,17 +11,10 @@ class PuestosModel extends Model
 
     protected $table = 'puestos';
 
-    protected $fillable = ['id_puesto','puesto','sueldo','nom_posicion','depto'];
-
-    public function getPosiciones()
-    {
-        return $this->belongsTo('App\Models\PosicionesModel','nom_posicion','id_posicion',
-    'posicion', 'departamento');
-    }
+    protected $fillable = ['id','puesto_trabajo','sueldo','id_depto'];
 
     public function getDeptos()
     {
-        return $this->belongsTo('App\Models\DeptosModel', 'depto', 'id',
-        '', 'nombre_depto');
+        return $this->belongsTo('App\Models\DeptosModel', 'id');
     }
 }

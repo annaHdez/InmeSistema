@@ -1,23 +1,12 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/cache', function() {
@@ -30,11 +19,27 @@ Route::get('/cache', function() {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//1er migración
 Route::resource('deptos', 'DeptosController');
-Route::resource('posiciones', 'PosicionesController');
-Route::resource('puestos', 'PuestosController');
-Route::resource('colab', 'ColabController');
+Route::resource('detalleProy', 'DetalleProyectoController');
+Route::resource('diasfest', 'DiasFestController');
 Route::resource('empresas', 'EmpresasController');
-Route::resource('proyectos', 'ProyectoController');
+Route::resource('posiciones', 'PosicionesController');
+Route::resource('siglas', 'SiglasController');
+
+//2da migración
+Route::resource('puestos', 'PuestosController');
+Route::resource('registrarProy', 'RegistrarProyectoController');
+
+//3ra migración
+Route::resource('colab', 'ColaboradoresController');
+
+//4ta migración
+
+
+//6ta migración
 Route::resource('nomina', 'NominaController');
-Route::resource('users', 'UserController');
+
+//Extras
+Route::resource('org', 'OrganizacionController');
+Route::resource('proyectos', 'ProyectoController');

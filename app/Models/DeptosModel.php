@@ -11,5 +11,5 @@ class DeptosModel extends Model
 
     protected $table = 'departamentos';
 
-    protected $fillable = ['id_depto','nombre_depto'];
+    protected $fillable = ['id','nomDepto'];
 }

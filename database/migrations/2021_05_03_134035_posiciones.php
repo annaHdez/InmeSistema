@@ -9,11 +9,9 @@ class Posiciones extends Migration
     public function up()
     {
         Schema::create('posiciones', function (Blueprint $table) {
-            $table->integer('id_posicion')->primary();
-            $table->string('posicion',20)->index();
-            $table->string('departamento',50);
-                $table->foreign('departamento')->cascadeOnDelete()
-                ->references('nombre_depto')->on('departamentos');
+            $table->id();
+            $table->string('posicion',20);
+            $table->timestamps();
         });
     }
 

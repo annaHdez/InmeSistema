@@ -9,11 +9,16 @@ class Empresas extends Migration
     public function up()
     {
         Schema::create('empresas', function (Blueprint $table){
-            $table->string('id_empresa',30)->primary();
-            $table->string('nombre_empresa',100)->index();
-            $table->string('direccion',255);
-            $table->string('nombre_contacto',100);
-            $table->string('telefono_contacto',20);
+            $table->id();
+            $table->string('nomEmpresa',100);
+            $table->string('calle',50);
+            $table->string('numero',50);
+            $table->string('colonia',50);
+            $table->string('nombre_contacto',50);
+            $table->string('apePat_contacto',50);
+            $table->string('apeMat_contacto',50);
+            $table->string('telefono_contacto',10);
+            $table->timestamps();
         });
     }
 

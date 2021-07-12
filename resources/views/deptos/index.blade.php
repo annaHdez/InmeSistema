@@ -1,42 +1,38 @@
-@extends('layouts.app')
+@extends('layouts.header.header')
 <!-- Van a estar las tablas -->
 
 @section('content')
 <br><br>
 <h1 class = "text-center">Departamentos</h1>
+    @if(Session::has('message'))
+    {{Session::get('message')}}
+    @endif
 <br><br>
 
 <body class="text-center">
-    <a href = "{{route('deptos.create')}}" class = "btn btn-primary btn-sm">Agregar departamento</a>
-    
-    <div class = "container" style= "display:inline-flex">
-        <div style = "margin:50px">
-            <div class = "col-md-16">
-                <div class = "card">
-                    <div class = "card-header"> Departamentos</div>
-                    <div class = "card-body">
-                        <table class="table table-hover table-bordered table-sm table-condensed">
-                            <thead>
-                                <th>No.</th>
-                                <th>Nombre del departamento</th>
-                            </thead>
-                            <tbody>
-                                @foreach($tableDeptos as $rowDepto)
-                                    <tr>
-                                        <td>
-                                            {{$rowDepto->id_depto}}
-                                        </td>
-                                        <td>
-                                            {{$rowDepto->nombre_depto}}
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <table class="table table-light table-hover table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Departamento</th>
+                <th>
+                    <a href = "{{route('deptos.create')}}" class = "btn btn-info btn-md">Agregar departamento</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($tableDeptos as $rowDeptos)
+                <tr>
+                    <td>{{$rowDeptos->id}}</td>
+                    <td>{{$rowDeptos->nomDepto}}</td>
+                    <td>
+                        <a  class = "btn btn-success btn-sm">Actualizar</a>
+                        <a  class = "btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                    <td></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 @endsection

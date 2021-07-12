@@ -1,23 +1,42 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ColaboradoresModel;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redirect;
 
 class ColaboradoresController extends Controller
 {
-    public function index(Request $request){
-        $colab_table = ColaboradoresModel::all();
-        return view('colab.index', ['colab_table'=>$colab_table]);
+    public function index(){
+        $tableColab = ColaboradoresModel::all();
+        return view('colab.index', ['tableColab'=>$tableColab]);
     }
 
     public function create(){
+        return view('colab.create');
     }
 
-    public function store(){
+    public function store(Request $request){
+        $validateData = $request->validate([
+            'sexo' => 'required',
+            'fechaNac' => 'required|',
+            'nombre' => 'required|min:5|max:50',
+            'ape_paterno' => 'required|min:5|max:50',
+            'ape_materno' => 'required|min:5|max:50',
+            'correo' => 'required|email',
+            'grado_estudios' => 'required|min:8|max:30'
+        ]);
 
+        $mColab = new ColaboradoresModel;
+        $mColab->id = $request->id;
+        $mColab-> nombre = $request->nombre;
+        $mColab->save();
+
+        Session::flash('message','Colaborador añadido');
+        return Redirect::to('colab');
     }
 
     public function show(){

@@ -1,20 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.header.header')
 <!-- Formularios de creación -->
 
 @section('content')
-
-<a href="{{URL::to('deptos')}} "> Regresar </a><br><br>
-<br>
-<h1>Formulario de creación</h1> <br>
-{{HTML::ul($errors->all()) }}
-<!--{Form::open(array(['url' => 'deptos'])) }}-->
-
-<div class= "form-group col-md-4">
-    {{Form::label('nombre_depto', 'Nombre del departamento')}}
-    {{Form::text('nombre_depto', Request::old('nombre_depto'), ["class" => "form-control"])}}
-</div>
+<a href="{{URL::to('deptos')}}"> Regresar</a>
 <br><br>
-{{{Form::submit('Registrar departamento', ["class" => "btn btn-success"])}}}
-{{Form::close()}}
+<h1 style="text-align: center">Registro de departamentos</h1>
+<br><br>
+{{HTML::ul($errors->all()) }}
+{{Form::open(['url' => 'deptos']) }}
 
+<div class= "row">
+    <div class= "form-group col-md-4">
+        {{Form::label('nomDepto','Departamento')}}
+        {{Form::text('nomDepto', Request::old('nomDepto'), ["class"=>"form-control"])}}
+    </div>
+    <br>
+    <div>
+    {{Form::submit('Registrar departamento', ['class' => "btn btn-success"])}}
+    {{Form::close()}}
+    </div>
+</div>
 @endsection

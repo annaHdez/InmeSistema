@@ -11,15 +11,15 @@ class ColaboradoresModel extends Model
 
     protected $table = ['colaboradores'];
 
-    protected $fillable = ['id_colab','nombre','ape_pat','ape_mat','sexo','fechaNac',
-    'educacion','fecha_admision','posicion_colab','puesto_colab','sueldo_colab',
-    'SD_IMSS','SDI','estatus','fecha_baja','antiguedad'];
+    protected $fillable = ['id','sexo','fechaNac','nombre','ape_paterno','ape_materno',
+    'correo','grado_estudios','fecha_admision','id_posicion','puesto','sueldo_base',
+    'SD_IMSS','SDI','turno','estatus','fecha_baja','antiguedad','costoHrsExtra'];
 
     public function getPosicion(){
-        return $this->belongsTo('App\Models\PosicionesModel', 'posicion');
+        return $this->belongsTo('App\Models\PosicionesModel', 'id');
     }
 
     public function getPuesto(){
-        return $this->belongsTo('App\Models\PuestosModel', 'puesto','sueldo');
+        return $this->belongsTo('App\Models\PuestosModel', 'puesto_trabajo','sueldo');
     }
 }
